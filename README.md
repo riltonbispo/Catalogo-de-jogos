@@ -28,7 +28,7 @@ git clone git@github.com:riltonbispo/Entrega-P1-A3.git
 * **CSS** - Estilos
 * **JavaScript** - Linguagem Principal
 * **UML** - Linguagem de modelagem
-* **Miro*** - Ferramenta para criação de modelagens
+* **Miro** - Ferramenta para criação de modelagens
 * **Figma** - Ferramenta para criação de UI
 
 
