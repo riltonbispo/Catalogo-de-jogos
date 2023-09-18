@@ -38,6 +38,6 @@ git clone git@github.com:riltonbispo/Entrega-P1-A3.git
 
 * **Rilton Bispo** - *Desenvolvedor* - [github](https://github.com/riltonbispo)
 * **João Vitor** - *Desenvolvedor* - [github](https://github.com/VittorLK)
-* **Rilton Bispo** - *Desenvolvedor* - [github](https://github.com/riltonbispo)
+* **Douglas Dauto** - *Desenvolvedor* - [github](https://github.com/Douglas-Dauto)
 * **Rilton Bispo** - *Desenvolvedor* - [github](https://github.com/riltonbispo)
 * **Rilton Bispo** - *Desenvolvedor* - [github](https://github.com/riltonbispo)
