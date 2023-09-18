@@ -1,6 +1,4 @@
-# Catálogo de Jogos - P1 A3
-
-Este é o repositório da primeira entrega do projeto "Catálogo de Jogos". Nesta entrega, apresentamos o protótipo do frontend da nossa aplicação web.
+# Catálogo de Jogos
 
 &nbsp;
 &nbsp;
