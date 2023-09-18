@@ -35,7 +35,7 @@ git clone git@github.com:riltonbispo/Entrega-P1-A3.git
 &nbsp;
 &nbsp;
 
-### Features
+## 🚀 Features
 
 - [x] Modelagem UML
 - [ ] Wireframes
@@ -43,11 +43,20 @@ git clone git@github.com:riltonbispo/Entrega-P1-A3.git
 - [ ] Protótipo em HTML, CSS e Javascript
 - [ ] Relatório do projeto contendo
 
+&nbsp;
+&nbsp;
+## 👨‍💻 Contribuidores
+[![Generic badge](https://img.shields.io/badge/💻-Código-14140F.svg)]()
+[![Generic badge](https://img.shields.io/badge/📖-Documentação-14140F.svg)]()
+[![Generic badge](https://img.shields.io/badge/🖌-Design-14140F.svg)]()
+[![Generic badge](https://img.shields.io/badge/🛠-Modelagem-14140F.svg)]()
 
-## ✒️ Autores
+    
+<table>
+  <tr>
+    <td align="center"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/98268946?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/riltonbispo"><b>Rilton Bispo</b></a></sub><br />💻 📖 🖌 🛠</td>
+    <td align="center"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/94196042?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/Douglas-Dauto"><b>Douglas Dauto</b></a></sub><br />💻 🖌</td>
+    <td align="center"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/117868567?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/VittorLK"><b>João Vitor</b></a></sub><br />💻 🖌 🛠</td>
+  </tr>
+</table>
 
-* **Rilton Bispo** - *Desenvolvedor* - [github](https://github.com/riltonbispo)
-* **João Vitor** - *Desenvolvedor* - [github](https://github.com/VittorLK)
-* **Douglas Dauto** - *Desenvolvedor* - [github](https://github.com/Douglas-Dauto)
-* **Rilton Bispo** - *Desenvolvedor* - [github](https://github.com/riltonbispo)
-* **Rilton Bispo** - *Desenvolvedor* - [github](https://github.com/riltonbispo)
