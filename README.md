@@ -29,18 +29,6 @@ git clone git@github.com:riltonbispo/Entrega-P1-A3.git
 * **Miro** - Ferramenta para criação de modelagens
 * **Figma** - Ferramenta para criação de UI
 
-
-&nbsp;
-&nbsp;
-
-## 🚀 Features
-
-- [x] Modelagem UML
-- [ ] Wireframes
-- [ ] Protótipos de alta fidelidade
-- [ ] Protótipo em HTML, CSS e Javascript
-- [ ] Relatório do projeto contendo
-
 &nbsp;
 &nbsp;
 ## 👨‍💻 Contribuidores
