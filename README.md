@@ -66,7 +66,7 @@ git clone git@github.com:riltonbispo/Entrega-P1-A3.git
         <br />
         <sub><a href="https://github.com/ldbarross"><b>Lucas Davi</b></a></sub>
         <br />
-        💻 🖌 🛠
+        💻
     </td>
   </tr>
 </table>
