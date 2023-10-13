@@ -1,0 +1,9 @@
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter';
+    background-color: white;
+}
