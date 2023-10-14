@@ -1,12 +1,27 @@
+.logo {
+  min-width: 8rem;
+}
+
 .login__header {
-  padding: 1.5rem 6.5rem;
+  padding: 1.5rem 6rem;
   border-bottom: 1px solid #2d3648;
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
-  & img {
-    min-width: 8rem;
+.login__footer {
+  color: white;
+  background-color: #2d3648;
+  padding: 2rem;
+
+  & .logo {
+    margin-bottom: 2em;
+  }
+
+  & p {
+    font-family: Inter;
+    font-size: 0.875rem;
   }
 }
 
@@ -16,6 +31,10 @@
 @media (min-width: 1204px) {
   .login__header {
     justify-content: left;
+  }
+
+  .login__footer {
+    padding-inline: 6rem;
   }
 }
 
