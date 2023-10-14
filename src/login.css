@@ -1,0 +1,23 @@
+.login__header {
+  padding: 1.5rem 6.5rem;
+  border-bottom: 1px solid #2d3648;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    min-width: 8rem;
+  }
+}
+
+@media (min-width: 375px) {
+}
+
+@media (min-width: 1204px) {
+  .login__header {
+    justify-content: left;
+  }
+}
+
+@media (min-width: 1512px) {
+}
