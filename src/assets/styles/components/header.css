@@ -8,7 +8,7 @@ header {
     background-color: var(--colorWhite);
 }
 
-header ul {
+header > div {
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     align-items: center;
@@ -17,14 +17,12 @@ header ul {
     width: 100%;
 }
 
-header ul li:nth-child(1) {
-    font-size: 2em;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: end;
+header > div > img {
+    width: 100px;
+    justify-self: flex-end;
 }
 
-header ul li:nth-child(2) {
+header > div div:nth-child(2) {
     width: 100%;
     border: 1px solid var(--colorBlack);
     display: flex;
@@ -34,12 +32,12 @@ header ul li:nth-child(2) {
     align-items: center;
 }
 
-header ul li input {
+header input {
     width: 99%;
     border: 0;
     height: 30px;
 }
 
-header ul li:nth-child(3) {
+header > div p:nth-child(3) {
     font-weight: bold;
 }
