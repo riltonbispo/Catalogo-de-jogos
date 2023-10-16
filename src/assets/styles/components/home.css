@@ -1,0 +1,143 @@
+main {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 77px;
+}
+
+.nav-side {
+    width: 260px;
+    border-right: 1px solid var(--colorBlack);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: fixed;
+    left: 0;
+    top: 77px;
+    background-color: var(--colorWhite);
+    height: calc(100vh - 77px);
+}
+
+.nav-side ul {
+    border-bottom: 3px solid var(--colorLightBlue);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 40px;
+}
+
+.nav-side ul li {
+    padding: 10px 5px 10px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 40px;
+}
+
+.nav-side ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-side ul li:hover, .nav-side ul li:hover a {
+    background-color: var(--colorDarkBlue);
+    color: var(--colorWhite);
+}
+
+.nav-side ul li a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--colorDarkBlue);
+}
+
+.nav-side ul li:hover svg path {
+    fill: var(--colorWhite);
+}
+
+.nav-side > div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-side button {
+    width: 100%;
+}
+
+main section:nth-child(2) {
+    width: 80%;
+}
+
+.sec-main {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin-left: 260px;
+}
+
+.sec-main > div:nth-child(1) {
+    border-bottom: 3px solid var(--colorLightBlue);
+    padding-bottom: 80px;
+    font-size: 1.2em;
+}
+
+.sec-main > section, .sec-main > section > div {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.sec-main section {
+    width: 100% !important;
+}
+
+.sec-main section:not(.sec-main section:last-child) {
+    border-bottom: 3px solid var(--colorLightBlue);
+    padding-bottom: 80px;
+}
+
+.sec-main > section h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.sec-main__container-game {
+    display: flex;
+    gap: 20px;
+}
+
+.sec-main__container-game > img {
+    width: 404px;
+    height: 266px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.sec-main__container-game > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sec-main__container-game > div > div:nth-child(1) {
+    display: flex;
+    gap: 10px;
+}
+
+.sec-main__container-game h3 {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+.container-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container-tags__tags-category, .container-tags__tags-platform {
+    display: flex;
+    gap: 15px;
+}
