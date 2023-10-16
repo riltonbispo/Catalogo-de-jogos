@@ -15,7 +15,7 @@ main {
     left: 0;
     top: 77px;
     background-color: var(--colorWhite);
-    height: calc(100vh - 77px);
+    height: 200vh;
 }
 
 .nav-side ul {
@@ -39,7 +39,8 @@ main {
     gap: 10px;
 }
 
-.nav-side ul li:hover, .nav-side ul li:hover a {
+.nav-side ul li:hover,
+.nav-side ul li:hover a {
     background-color: var(--colorDarkBlue);
     color: var(--colorWhite);
 }
@@ -83,7 +84,8 @@ main section:nth-child(2) {
     font-size: 1.2em;
 }
 
-.sec-main > section, .sec-main > section > div {
+.sec-main > section,
+.sec-main > section > div {
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -109,8 +111,6 @@ main section:nth-child(2) {
 }
 
 .sec-main__container-game > img {
-    width: 404px;
-    height: 266px;
     object-fit: cover;
     border-radius: 4px;
 }
@@ -137,7 +137,33 @@ main section:nth-child(2) {
     gap: 15px;
 }
 
-.container-tags__tags-category, .container-tags__tags-platform {
+.container-tags__tags-category,
+.container-tags__tags-platform {
     display: flex;
     gap: 15px;
+}
+
+#sec-jogado,
+#sec-jogando,
+#sec-zerado,
+#sec-nao-recomendo {
+    scroll-margin-top: 15rem;
+}
+
+.sec-main__container-game {
+    flex-wrap: wrap;
+}
+
+.info-game {
+    & button {
+        margin-block: 1em;
+    }
+}
+
+#nav-mobile {
+    z-index: 2000;
+
+    & ul {
+        margin-top: 10vh;
+    }
 }
