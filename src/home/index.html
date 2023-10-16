@@ -16,8 +16,47 @@
 </head>
 
 <body>
-  <h1>Home</h1>
-  <a href="../index.html">voltar para o login</a>
+  <header class="home__header">
+    <div class="home__header-content">
+      <img src="../assets/ECHO-black.svg" alt="echo logo">
+      <button class="btn btn__secondary"><img src="../assets/close.svg" alt=""></button>
+    </div>
+  </header>
+
+  <nav class="home__menu">
+    <ul class="home__menu-itens">
+      <li class="home__menu-item">
+        <div class="home__menu-content">
+          <img src="../assets/jogado.svg" alt="">
+          <span>Jogado</span>
+        </div>
+      </li>
+      <li class="home__menu-item">
+        <div class="home__menu-content">
+          <img src="../assets/jogando.svg" alt="">
+          <span>Jogando</span>
+        </div>
+      </li>
+      <li class="home__menu-item">
+        <div class="home__menu-content">
+          <img src="../assets/zerado.svg" alt="">
+          <span>Zerado</span>
+        </div>
+      </li>
+      <li class="home__menu-item">
+        <div class="home__menu-content">
+          <img src="../assets/nao-recomendo.svg" alt="">
+          <span>Não Recomendo</span>
+        </div>
+      </li>
+    </ul>
+    <div class="divider home__menu-content"></div>
+    <div class="home__menu-buttons home__menu-content">
+      <button class="btn btn__primary">Adicionar Jogo</button>
+      <button class="btn btn__secondary">Adicionar Plataforma</button>
+    </div>
+  </nav>
+
   <script src="./home.js"></script>
 </body>
 
