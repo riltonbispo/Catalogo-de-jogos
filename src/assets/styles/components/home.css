@@ -162,4 +162,8 @@ main section:nth-child(2) {
 
 #nav-mobile {
     z-index: 2000;
+
+    & ul {
+        margin-top: 10vh;
+    }
 }
