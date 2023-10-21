@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./assets/styles/components/tag.css">
   <link rel="stylesheet" href="./assets/styles/components/header.css">
   <link rel="stylesheet" href="./assets/styles/components/home.css">
+  <link rel="stylesheet" href="./assets/styles/components/modal.css">
   <link rel="stylesheet" href="./assets/styles/components/homeResponsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +21,35 @@
 </head>
 
 <body>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p class="modal-title">Adicione um novo Jogo</p>
+      <form action="" class="form-game">
+
+        <label for="">
+          <span>Nome do Jogo</span>
+          <input type="text" name="" id="game-name" placeholder="digite aqui">
+        </label>
+
+        <label for="game-photo">
+          <span>Enviar imagem</span>
+          <img src="./assets/img/upload.svg" alt="">
+          <input type="file" name="" id="game-photo">
+        </label>
+
+        <fieldset>
+          <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
+          <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
+          <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
+          <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
+          <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
+        </fieldset>
+
+      </form>
+    </div>
+  </div>
   <header>
     <div class="header-content">
       <img src="assets/img/ECHO-black.svg" alt="Echo">
@@ -137,7 +167,7 @@
       </ul>
 
       <div>
-        <button class="btn btn__primary">Adicionar jogo</button>
+        <button class="btn btn__primary" onclick="openModal()">Adicionar jogo</button>
         <button class="btn btn__secondary">Adicionar plataforma</button>
       </div>
     </nav>
