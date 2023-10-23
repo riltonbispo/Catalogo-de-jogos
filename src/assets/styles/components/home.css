@@ -27,16 +27,17 @@ main {
 }
 
 .nav-side ul li {
-    padding: 10px 5px 10px 10px;
     cursor: pointer;
-    border-radius: 4px;
     height: 40px;
+    border-radius: 4px;
 }
 
 .nav-side ul li a {
     display: flex;
     align-items: center;
     gap: 10px;
+    border-radius: 4px;
+    padding: 10px 5px 10px 10px;
 }
 
 .nav-side ul li:hover, .nav-side ul li:hover a {
