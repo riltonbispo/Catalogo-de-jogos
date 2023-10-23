@@ -9,12 +9,10 @@ header {
 }
 
 header > div {
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 100%;
 }
 
 header > div > img {
@@ -40,4 +38,10 @@ header input {
 
 header > div p:nth-child(3) {
     font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    width: 3rem;
+    cursor: pointer;
 }
