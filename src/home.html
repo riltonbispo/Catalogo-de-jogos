@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./assets/img/controller.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <link rel="stylesheet" href="./assets/styles/base/reset.css">
   <link rel="stylesheet" href="./assets/styles/base/style.css">
   <link rel="stylesheet" href="./assets/styles/components/button.css">
@@ -24,24 +27,55 @@
 
   <div id="modal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <img src="./assets/img/icon-x.svg" id="close" onclick="closeModal()">
       <p class="modal-title">Adicione um novo Jogo</p>
       <form action="" class="form-game">
 
-        <label for="">
+        <label for="" class="input-gameName">
           <span>Nome do Jogo</span>
           <input type="text" name="" id="game-name" placeholder="digite aqui">
         </label>
 
-        <label for="game-photo">
+        <label for="game-photo" class="input-gameImage">
           <span>Enviar imagem</span>
-          <img src="./assets/img/upload.svg" alt="">
+          <img src="./assets/img/icon-upload.svg" alt="">
           <input type="file" name="" id="game-photo">
         </label>
 
+        <p class="star-title">Avaliação</p>
+        <div class="stars">
+          <input class="star star-5" id="star-5" type="radio" name="star" value="5" />
+          <label class="star star-5" for="star-5"></label>
+
+          <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
+          <label class="star star-4" for "star-4"></label>
+
+          <input class="star star-3" id="star-3" type="radio" name="star" value="3" />
+          <label class="star star-3" for="star-3"></label>
+
+          <input class="star star-2" id="star-2" type="radio" name="star" value="2" />
+          <label class="star star-2" for="star-2"></label>
+
+          <input class="star star-1" id="star-1" type="radio" name="star" value="1" />
+          <label class="star star-1" for="star-1"></label>
+        </div>
+
+        <p class="category-title">Categoria</p>
+        <div id="category">
+        </div>
+
+        <p class="plataform-title">Plataforma</p>
+        <div id="plataform">
+        </div>
+
+        <div class="modal-buttons">
+          <button class="btn btn__delete" onclick="closeModal()">Cancelar</button>
+          <button class="btn btn__primary">Cadastrar</button>
+        </div>
       </form>
     </div>
   </div>
+
   <header>
     <div class="header-content">
       <img src="assets/img/ECHO-black.svg" alt="Echo">
@@ -106,7 +140,7 @@
       </ul>
 
       <div>
-        <button class="btn btn__primary">Adicionar jogo</button>
+        <button class="btn btn__primary" onclick="openModal()">Adicionar jogo</button>
         <button class="btn btn__secondary">Adicionar plataforma</button>
       </div>
     </nav>
@@ -203,6 +237,9 @@
 
   <script src="./assets/scripts/home.js"></script>
   <script src="./assets/scripts/gameList.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </body>
 
 </html>
