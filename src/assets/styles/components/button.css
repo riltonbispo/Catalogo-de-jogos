@@ -3,28 +3,7 @@ button {
   margin: 0;
   padding: 0;
   overflow: visible;
-
   background: transparent;
-
-  /* inherit font & color from ancestor */
-  color: inherit;
-  font: inherit;
-
-  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-  line-height: normal;
-
-  /* Corrects font smoothing for webkit */
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
-
-  /* Corrects inability to style clickable `input` types in iOS */
-  appearance: none;
-
-  /* Remove excess padding and border in Firefox 4+ */
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
 }
 
 button:hover {
@@ -32,13 +11,8 @@ button:hover {
 }
 
 .btn {
-  font-feature-settings: "calt" off;
-
-  font-family: Inter;
-  font-size: 1rem;
   font-weight: 700;
   line-height: 1.5rem; /* 150% */
-  letter-spacing: -0.01rem;
   text-align: center;
 
   border-radius: 0.375em;
@@ -55,6 +29,10 @@ button:hover {
 .btn__primary {
   color: var(--colorWhite);
   background: var(--colorDarkBlue);
+
+  &:hover {
+    color: #fff;
+  }
 }
 
 .btn__secondary {
@@ -63,4 +41,5 @@ button:hover {
 
 .btn__delete {
   color: var(--colorRed);
+  border: 0;
 }

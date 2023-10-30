@@ -1,19 +1,141 @@
-const showMenu = () => {
-  let button = document.querySelector('.hamburger')
-  let menuMobile = document.querySelector('#nav-mobile')
+const categories = ['jogado', 'jogando', 'zerado', 'nao-recomendo'];
+const plataforms = ['Steam', 'Epic', 'PSN', 'Xbox', 'PlayStore'];
+const checkCategories = document.getElementById("categories-select");
+const checkPlatforms = document.getElementById("platforms-select");
+const checkGames = document.getElementById("games-select");
 
-  if (menuMobile.classList.contains('open')) {
-    menuMobile.classList.remove('open')
-    menuMobile.style.display = 'none'
-    button.src = "assets/img/hamburger.svg";
-    document.documentElement.style.overflow = 'auto';
-    document.body.style.overflow = 'auto';
+const games = [
+  {
+    id: 1,
+    title: 'Stardew Valley',
+    categorys: ['jogado', 'jogando', 'zerado'],
+    plataform: ['steam', 'epic', 'xbox'],
+    img: './assets/img/image-game-1.png',
+    rating: 3
+  },
+  {
+    id: 2,
+    title: 'Red Dead Redemption 2',
+    categorys: ['jogado', 'jogando', 'zerado'],
+    plataform: ['steam', 'epic', 'xbox'],
+    img: './assets/img/image-game-2.png',
+    rating: 3
+  },
+  {
+    id: 3,
+    title: 'Detroit: Become Human',
+    categorys: ['jogado', 'jogando', 'zerado'],
+    plataform: ['steam', 'epic', 'xbox'],
+    img: './assets/img/image-game-3.png',
+    rating: 3
+  }
+];
+
+const gameListContainers = document.querySelectorAll('.game-list');
+
+gameListContainers.forEach((container) => {
+  games.forEach((game) => {
+    const gameItem = document.createElement('div');
+    gameItem.classList.add('sec-main__container-game');
+
+    gameItem.innerHTML = `
+      <img src="${game.img}" alt="${game.title}" class="game-image">
+      <div>
+        <div>
+          <img src="assets/img/star-fill.svg" alt="Estrela preenchida">
+          <img src="assets/img/star-fill.svg" alt="Estrela preenchida">
+          <img src="assets/img/star-fill.svg" alt "Estrela preenchida">
+          <img src="assets/img/star.svg" alt="Estrela vazia">
+          <img src="assets/img/star.svg" alt="Estrela vazia">
+        </div>
+        <div class="info-game">
+          <h3>${game.title}</h3>
+          <button class="btn btn__secondary">Editar</button>
+        </div>
+        <div class="container-tags">
+          <div class="container-tags__tags-category">
+            ${game.categorys.map((category) => `<div class="tag__game"><p>${category}</p></div>`).join('')}
+          </div>
+          <div class="container-tags__tags-platform">
+            ${game.plataform.map((platform) => `<div class="tag__plataform"><p>${platform}</p></div>`).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(gameItem);
+  });
+});
+
+
+categories.forEach(category => {
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.id = category;
+
+  const label = document.createElement('label');
+  label.htmlFor = category;
+  label.appendChild(checkbox);
+  label.appendChild(document.createTextNode(category));
+
+  checkCategories.appendChild(label);
+});
+
+plataforms.forEach(platform => {
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.id = platform;
+
+  const label = document.createElement('label');
+  label.htmlFor = platform;
+  label.appendChild(checkbox);
+  label.appendChild(document.createTextNode(platform));
+
+  checkPlatforms.appendChild(label);
+});
+
+games.forEach(game => {
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.id = game.title;
+
+  const label = document.createElement('label');
+  label.htmlFor = game.title;
+  label.appendChild(checkbox);
+  label.appendChild(document.createTextNode(game.title));
+
+  checkGames.appendChild(label);
+})
+
+var expandedCategory = true;
+function showCategories() {
+  if (!expandedCategory) {
+    checkCategories.style.display = "block";
+    expandedCategory = true;
   } else {
-    menuMobile.classList.add('open')
-    menuMobile.style.display = 'block'
-    menuMobile.style.width = '100%'
-    button.src = "assets/img/x.svg";
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
+    checkCategories.style.display = "none";
+    expandedCategory = false;
+  }
+}
+
+var expandedPlatform = true;
+function showPlatforms() {
+  if (!expandedPlatform) {
+    checkPlatforms.style.display = "block";
+    expandedPlatform = true;
+  } else {
+    checkPlatforms.style.display = "none";
+    expandedPlatform = false;
+  }
+}
+
+var expandedGames = true;
+function showGames() {
+  if (!expandedGames) {
+    checkGames.style.display = "block";
+    expandedGames = true;
+  } else {
+    checkGames.style.display = "none";
+    expandedGames = false;
   }
 }

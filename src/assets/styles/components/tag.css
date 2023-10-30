@@ -11,9 +11,14 @@
     border-radius: 0.2rem;
 }
 
-.tag__game, .tag__plataform {
-    background-color: var(--colorDarkBlue);
+.tag__game,
+.tag__plataform {
+    background-color: #35373a;
     color: var(--colorWhite);
     padding: 10px;
     border-radius: 4px;
+}
+
+.tag__plataform {
+    background-color: #2d3648;
 }
