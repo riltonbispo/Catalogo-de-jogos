@@ -26,24 +26,24 @@
 
 <body>
 
-  <header>
-    <div class="header-content">
-      <img src="assets/img/ECHO-black.svg" alt="Echo">
-
-      <div class="header-input">
-        <input type="text">
-        <img src="assets/img/search.svg" alt="Pesquisa">
+  <header class="header__container">
+    <nav class="header__content navbar navbar-expand-lg navbar-light bg-light">
+      <img src="assets/img/ECHO-black.svg" alt="Echo" class="header__logo">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="header__buttons">
+          <button type="button" class="btn btn__primary" data-toggle="modal" data-target="#game-modal">
+            Adicionar Jogo
+          </button>
+          <button type="button" class="btn btn__secondary" data-toggle="modal" data-target="#platform-modal">
+            Adicionar Plataforma
+          </button>
+        </div>
       </div>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn__primary" data-toggle="modal" data-target="#game-modal">
-        Adicionar Jogo
-      </button>
-      <button type="button" class="btn btn__secondary" data-toggle="modal" data-target="#platform-modal">
-        Adicionar Plataforma
-      </button>
-
-      <img src="assets/img/hamburger.svg" alt="" class="hamburger" onclick="showMenu()">
-    </div>
+    </nav>
   </header>
 
   <main>

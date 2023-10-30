@@ -9,7 +9,7 @@ const games = [
     id: 1,
     title: 'Stardew Valley',
     categorys: ['jogado', 'jogando', 'zerado'],
-    plataform: ['steam', 'epic', 'xbox'],
+    plataform: ['Steam', 'Epic', 'PSN', 'Xbox'],
     img: './assets/img/image-game-1.png',
     rating: 3
   },
@@ -17,7 +17,7 @@ const games = [
     id: 2,
     title: 'Red Dead Redemption 2',
     categorys: ['jogado', 'jogando', 'zerado'],
-    plataform: ['steam', 'epic', 'xbox'],
+    plataform: ['Steam', 'Epic', 'PSN', 'Xbox'],
     img: './assets/img/image-game-2.png',
     rating: 3
   },
@@ -25,7 +25,7 @@ const games = [
     id: 3,
     title: 'Detroit: Become Human',
     categorys: ['jogado', 'jogando', 'zerado'],
-    plataform: ['steam', 'epic', 'xbox'],
+    plataform: ['Steam', 'Epic', 'PSN', 'Xbox'],
     img: './assets/img/image-game-3.png',
     rating: 3
   }

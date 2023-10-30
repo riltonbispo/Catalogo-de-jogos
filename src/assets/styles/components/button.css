@@ -2,44 +2,59 @@ button {
   border: none;
   margin: 0;
   padding: 0;
+  width: auto;
   overflow: visible;
   background: transparent;
-}
-
-button:hover {
-  transform: scale(1.01);
+  appearance: none;
 }
 
 .btn {
   font-weight: 700;
-  line-height: 1.5rem; /* 150% */
+  line-height: 1.5rem;
   text-align: center;
-
+  padding: 1em 1.5em;
   border-radius: 0.375em;
-  text-transform: capitalize;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: transform 50ms ease-in-out;
-  width: min-content;
-  border: 2px solid var(--colorDarkBlue);
 }
 
 .btn__primary {
-  color: var(--colorWhite);
-  background: var(--colorDarkBlue);
+  color: white;
+  background: #2d3648;
 
   &:hover {
-    color: #fff;
+    background-color: white;
+    color: #2d3648;
+    filter: brightness(90%);
   }
 }
 
 .btn__secondary {
-  color: var(--colorDarkBlue);
+  color: #2d3648;
+  border: 2px solid #2d3648;
+
+  &:hover {
+    background-color: white;
+    color: #2d3648;
+    filter: brightness(90%);
+  }
 }
 
 .btn__delete {
-  color: var(--colorRed);
-  border: 0;
+  color: #ff5252;
+}
+
+.tag {
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 150%;
+
+  padding: 0.25em 0.5em;
+  border-radius: 0.2rem;
+}
+
+.tag__game {
+  background: #35373a;
+}
+
+.tag__plataform {
+  background: #2d3648;
 }
