@@ -75,7 +75,7 @@ main section:nth-child(2) {
     display: flex;
     flex-direction: column;
     gap: 80px;
-    margin-left: 260px;
+    margin-top: 4rem;
 }
 
 .sec-main > div:nth-child(1) {
@@ -158,6 +158,12 @@ main section:nth-child(2) {
     & button {
         margin-block: 1em;
     }
+}
+
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 #nav-mobile {

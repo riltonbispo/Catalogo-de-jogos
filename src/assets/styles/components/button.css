@@ -42,7 +42,4 @@ button:hover {
 .btn__delete {
   color: var(--colorRed);
   border: 0;
-  &:hover {
-    color: #fff;
-  }
 }
