@@ -3,6 +3,8 @@ const plataforms = ['Steam', 'Epic', 'PSN', 'Xbox', 'PlayStore'];
 const checkCategories = document.getElementById("categories-select");
 const checkPlatforms = document.getElementById("platforms-select");
 const checkGames = document.getElementById("games-select");
+const platformList = document.getElementById("platform-list");
+
 
 const games = [
   {
@@ -31,42 +33,39 @@ const games = [
   }
 ];
 
-const gameListContainers = document.querySelectorAll('.game__list');
+const gameList = document.getElementById('game-list');
 
-gameListContainers.forEach((container) => {
-  games.forEach((game) => {
-    const gameItem = document.createElement('div');
-    gameItem.classList.add('container__game');
+games.map(game => {
+  const gameItem = document.createElement('div');
+  gameItem.classList.add('container__game')
 
-    gameItem.innerHTML = `
-      <img src="${game.img}" alt="${game.title}" class="game__image">
-      <div class="game__info">
-        <div class="game__rating">
-          <img src="assets/img/star-fill.svg" alt="Estrela preenchida">
-          <img src="assets/img/star-fill.svg" alt="Estrela preenchida">
-          <img src="assets/img/star-fill.svg" alt "Estrela preenchida">
-          <img src="assets/img/star.svg" alt="Estrela vazia">
-          <img src="assets/img/star.svg" alt="Estrela vazia">
+  gameItem.innerHTML = `
+    <img src="${game.img}" alt="${game.title}" class="game__image">
+    <div class="game__info">
+      <div class="game__rating">
+        <img src="assets/img/star-fill.svg" alt="Estrela preenchida">
+        <img src="assets/img/star-fill.svg" alt="Estrela preenchida">
+        <img src="assets/img/star-fill.svg" alt "Estrela preenchida">
+        <img src="assets/img/star.svg" alt="Estrela vazia">
+        <img src="assets/img/star.svg" alt="Estrela vazia">
+      </div>
+      <div class="game__details">
+        <h3 class="game__title">${game.title}</h3>
+        <button class="btn btn__secondary">Editar</button>
+      </div>
+      <div class="game__tags">
+        <div class="game__tags-category">
+          ${game.categorys.map((category) => `<div class="tag__game"><p>${category}</p></div>`).join('')}
         </div>
-        <div class="game__details">
-          <h3 class="game__title">${game.title}</h3>
-          <button class="btn btn__secondary">Editar</button>
-        </div>
-        <div class="game__tags">
-          <div class="game__tags-category">
-            ${game.categorys.map((category) => `<div class="tag__game"><p>${category}</p></div>`).join('')}
-          </div>
-          <div class="game__tags-platform">
-            ${game.plataform.map((platform) => `<div class="tag__plataform"><p>${platform}</p></div>`).join('')}
-          </div>
+        <div class="game__tags-platform">
+          ${game.plataform.map((platform) => `<div class="tag__plataform"><p>${platform}</p></div>`).join('')}
         </div>
       </div>
-    `;
+    </div>
+  `;
 
-    container.appendChild(gameItem);
-  });
-});
-
+  gameList.appendChild(gameItem)
+})
 
 categories.forEach(category => {
   const checkbox = document.createElement('input');
@@ -94,17 +93,20 @@ plataforms.forEach(platform => {
   checkPlatforms.appendChild(label);
 });
 
-games.forEach(game => {
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  checkbox.id = game.title;
 
-  const label = document.createElement('label');
-  label.htmlFor = game.title;
-  label.appendChild(checkbox);
-  label.appendChild(document.createTextNode(game.title));
+plataforms.map(platform => {
+  const listItem = document.createElement('li');
+  listItem.classList.add('platform-item');
 
-  checkGames.appendChild(label);
+  listItem.innerHTML = `
+    <div class="platform-input__container">
+      <input type="text" id=${platform} name=${platform} value=${platform} class="platform-input"></input>
+      <img src="assets/img/pen-icon.svg" class="platform-icon"/>
+    </div>
+    <img src="assets/img/icon-trash.svg" class="platform-image"/>
+  `
+
+  platformList.appendChild(listItem);
 })
 
 var expandedCategory = true;
@@ -126,29 +128,5 @@ function showPlatforms() {
   } else {
     checkPlatforms.style.display = "none";
     expandedPlatform = false;
-  }
-}
-
-var expandedGames = true;
-function showGames() {
-  if (!expandedGames) {
-    checkGames.style.display = "block";
-    expandedGames = true;
-  } else {
-    checkGames.style.display = "none";
-    expandedGames = false;
-    checkPlatforms.style.display = "none";
-    expandedPlatform = false;
-  }
-}
-
-var expandedGames = true;
-function showGames() {
-  if (!expandedGames) {
-    checkGames.style.display = "block";
-    expandedGames = true;
-  } else {
-    checkGames.style.display = "none";
-    expandedGames = false;
   }
 }
