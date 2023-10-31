@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="./assets/styles/components/header.css">
   <link rel="stylesheet" href="./assets/styles/components/home.css">
   <link rel="stylesheet" href="./assets/styles/components/modal.css">
-  <link rel="stylesheet" href="./assets/styles/components/homeResponsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -26,148 +25,147 @@
 
 <body>
 
-  <header>
-    <div class="header-content">
-      <img src="assets/img/ECHO-black.svg" alt="Echo">
-
-      <div class="header-input">
-        <input type="text">
-        <img src="assets/img/search.svg" alt="Pesquisa">
+  <header class="header__container">
+    <nav class="header__content navbar navbar-expand-lg navbar-light bg-light">
+      <img src="assets/img/ECHO-black.svg" alt="Echo" class="header__logo">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="header__buttons">
+          <button type="button" class="btn btn__primary" data-toggle="modal" data-target="#game-modal">
+            Adicionar Jogo
+          </button>
+          <button type="button" class="btn btn__secondary" data-toggle="modal" data-target="#platform-modal">
+            Adicionar Plataforma
+          </button>
+        </div>
       </div>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn__primary" data-toggle="modal" data-target="#game-modal">
-        Adicionar Jogo
-      </button>
-      <button type="button" class="btn btn__secondary" data-toggle="modal" data-target="#platform-modal">
-        Adicionar Plataforma
-      </button>
-
-      <img src="assets/img/hamburger.svg" alt="" class="hamburger" onclick="showMenu()">
-    </div>
+    </nav>
   </header>
 
-  <main>
-    <section class="sec-main">
+  <div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-labelledby="game-modalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="game-modalTitle">Adicione um novo jogo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="" class="input-gameName">
+            <span>Nome do Jogo</span>
+            <input type="text" name="" id="game-name" placeholder="digite aqui">
+          </label>
+
+          <label for="game-photo" class="input-gameImage">
+            <span>Enviar imagem</span>
+            <img src="./assets/img/upload.svg" alt="">
+            <input type="file" name="" id="game-photo">
+          </label>
+
+          <p class="star-title">Avaliação</p>
+          <div class="stars">
+            <input class="star star-5" id="star-5" type="radio" name="star" value="5" />
+            <label class="star star-5" for="star-5"></label>
+
+            <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
+            <label class="star star-4" for="star-4"></label>
+
+            <input class="star star-3" id="star-3" type="radio" name="star" value="3" />
+            <label class="star star-3" for="star-3"></label>
+
+            <input class="star star-2" id="star-2" type="radio" name="star" value="2" />
+            <label class="star star-2" for="star-2"></label>
+
+            <input class="star star-1" id="star-1" type="radio" name="star" value="1" />
+            <label class="star star-1" for="star-1"></label>
+          </div>
+
+          <div class="selects">
+            <div class="multiselect">
+              <span>Categoria</span>
+              <div class="selectBox" onclick="showCategories()">
+                <select>
+                  <option>select</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="categories-select">
+              </div>
+            </div>
+
+            <div class="multiselect">
+              <span>Plataformas</span>
+              <div class="selectBox" onclick="showPlatforms()">
+                <select>
+                  <option>select</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="platforms-select">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn__delete" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn__primary">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="platform-modal" tabindex="-1" role="dialog" aria-labelledby="platform-modalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="platform-modalTitle">Adicione uma Plataforma</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="" class="input-gameName">
+            <span>Nome da Plataforma</span>
+            <input type="text" name="" id="game-name" placeholder="digite aqui">
+          </label>
+
+          <div class="multiselect">
+            <span>Jogos</span>
+            <div class="selectBox" onclick="showGames()">
+              <select>
+                <option>select</option>
+              </select>
+              <div class="overSelect"></div>
+            </div>
+            <div id="games-select">
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn__delete" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn__primary">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main__container">
+    <section class="main__content">
       <div>
         <p class="main-description">Seja bem-vindo ao seu universo de jogos! Relembre suas aventuras e registre-as para
           nunca mais
           esquecê-las.</p>
       </div>
 
-      <div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-labelledby="game-modalTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="game-modalTitle">Adicione um novo jogo</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <label for="" class="input-gameName">
-                <span>Nome do Jogo</span>
-                <input type="text" name="" id="game-name" placeholder="digite aqui">
-              </label>
-
-              <label for="game-photo" class="input-gameImage">
-                <span>Enviar imagem</span>
-                <img src="./assets/img/upload.svg" alt="">
-                <input type="file" name="" id="game-photo">
-              </label>
-
-              <p class="star-title">Avaliação</p>
-              <div class="stars">
-                <input class="star star-5" id="star-5" type="radio" name="star" value="5" />
-                <label class="star star-5" for="star-5"></label>
-
-                <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
-                <label class="star star-4" for="star-4"></label>
-
-                <input class="star star-3" id="star-3" type="radio" name="star" value="3" />
-                <label class="star star-3" for="star-3"></label>
-
-                <input class="star star-2" id="star-2" type="radio" name="star" value="2" />
-                <label class="star star-2" for="star-2"></label>
-
-                <input class="star star-1" id="star-1" type="radio" name="star" value="1" />
-                <label class="star star-1" for="star-1"></label>
-              </div>
-
-              <div class="selects">
-                <div class="multiselect">
-                  <span>Categoria</span>
-                  <div class="selectBox" onclick="showCategories()">
-                    <select>
-                      <option>select</option>
-                    </select>
-                    <div class="overSelect"></div>
-                  </div>
-                  <div id="categories-select">
-                  </div>
-                </div>
-
-                <div class="multiselect">
-                  <span>Plataformas</span>
-                  <div class="selectBox" onclick="showPlatforms()">
-                    <select>
-                      <option>select</option>
-                    </select>
-                    <div class="overSelect"></div>
-                  </div>
-                  <div id="platforms-select">
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn__delete" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn__primary">Cadastrar</button>
-            </div>
-          </div>
-        </div>
+      <div class="game__list">
       </div>
-      <div class="modal fade" id="platform-modal" tabindex="-1" role="dialog" aria-labelledby="platform-modalTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="platform-modalTitle">Adicione uma Plataforma</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <label for="" class="input-gameName">
-                <span>Nome da Plataforma</span>
-                <input type="text" name="" id="game-name" placeholder="digite aqui">
-              </label>
-
-              <div class="multiselect">
-                <span>Jogos</span>
-                <div class="selectBox" onclick="showGames()">
-                  <select>
-                    <option>select</option>
-                  </select>
-                  <div class="overSelect"></div>
-                </div>
-                <div id="games-select">
-                </div>
-              </div>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn__delete" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn__primary">Cadastrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="game-list">
-      </div>
-    </section>
     </section>
   </main>
 
