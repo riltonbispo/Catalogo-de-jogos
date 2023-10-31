@@ -46,7 +46,7 @@
 
 #navbarNav {
     gap: 1rem;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 @media (max-width: 991px) {
