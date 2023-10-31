@@ -38,7 +38,7 @@
             Adicionar Jogo
           </button>
           <button type="button" class="btn btn__secondary" data-toggle="modal" data-target="#platform-modal">
-            Adicionar Plataforma
+            Gerenciar Plataformas
           </button>
         </div>
       </div>
@@ -56,13 +56,13 @@
           </button>
         </div>
         <div class="modal-body">
-          <label for="" class="input-gameName">
-            <span>Nome do Jogo</span>
+          <label for="game-name" class="input-gameName">
+            <span class="modal__subtitle">Nome do Jogo</span>
             <input type="text" name="" id="game-name" placeholder="digite aqui">
           </label>
 
           <label for="game-photo" class="input-gameImage">
-            <span>Enviar imagem</span>
+            <span class="modal__subtitle">Enviar imagem</span>
             <img src="./assets/img/upload.svg" alt="">
             <input type="file" name="" id="game-photo">
           </label>
@@ -87,7 +87,7 @@
 
           <div class="selects">
             <div class="multiselect">
-              <span>Categoria</span>
+              <span class="modal__subtitle">Categoria</span>
               <div class="selectBox" onclick="showCategories()">
                 <select>
                   <option>select</option>
@@ -99,7 +99,7 @@
             </div>
 
             <div class="multiselect">
-              <span>Plataformas</span>
+              <span class="modal__subtitle">Plataformas</span>
               <div class="selectBox" onclick="showPlatforms()">
                 <select>
                   <option>select</option>
@@ -130,22 +130,14 @@
           </button>
         </div>
         <div class="modal-body">
-          <label for="" class="input-gameName">
-            <span>Nome da Plataforma</span>
-            <input type="text" name="" id="game-name" placeholder="digite aqui">
+          <label for="platform-name" class="input-gameName">
+            <span class="modal__subtitle">Nome da Plataforma</span>
+            <input type="text" name="" id="platform-name" placeholder="digite aqui">
           </label>
 
-          <div class="multiselect">
-            <span>Jogos</span>
-            <div class="selectBox" onclick="showGames()">
-              <select>
-                <option>select</option>
-              </select>
-              <div class="overSelect"></div>
-            </div>
-            <div id="games-select">
-            </div>
-          </div>
+          <span class="modal__subtitle">Editar Plataformas</span>
+          <ul id="platform-list"></ul>
+
 
         </div>
         <div class="modal-footer">
@@ -164,7 +156,7 @@
           esquecê-las.</p>
       </div>
 
-      <div class="game__list">
+      <div class="game__list" id="game-list">
       </div>
     </section>
   </main>

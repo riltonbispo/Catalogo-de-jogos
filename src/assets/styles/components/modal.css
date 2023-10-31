@@ -21,19 +21,19 @@
   flex-direction: column;
   margin-bottom: 1.5rem;
 
-  & span {
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: 0.5em;
-  }
-
   & input {
     background-color: transparent;
     border-radius: 0.3rem;
     border: 2px solid #1a202c;
     padding: 1em;
     color: #1a202c;
+    margin-top: 0.5rem;
   }
+}
+
+.modal__subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 .input-gameImage {
@@ -170,6 +170,40 @@ label.star:before {
   display: flex;
   justify-content: space-between;
   align-items: start;
+}
+
+#platform-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.platform-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.platform-image {
+  cursor: pointer;
+}
+
+.platform-input {
+  border: 0;
+  width: 90%;
+}
+.platform-input__container {
+  position: relative;
+  padding: 5px;
+  border-radius: 0.375rem;
+  border: 2px solid var(--wf-base-500, #a0abc0);
+  background: var(--wf-base-white, #fff);
+}
+
+.platform-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
 }
 
 @media (max-width: 465px) {
