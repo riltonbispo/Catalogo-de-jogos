@@ -137,5 +137,18 @@ function showGames() {
   } else {
     checkGames.style.display = "none";
     expandedGames = false;
+    checkPlatforms.style.display = "none";
+    expandedPlatform = false;
+  }
+}
+
+var expandedGames = true;
+function showGames() {
+  if (!expandedGames) {
+    checkGames.style.display = "block";
+    expandedGames = true;
+  } else {
+    checkGames.style.display = "none";
+    expandedGames = false;
   }
 }
