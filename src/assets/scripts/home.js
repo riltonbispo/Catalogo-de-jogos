@@ -4,6 +4,8 @@ const checkCategories = document.getElementById("categories-select");
 const checkPlatforms = document.getElementById("platforms-select");
 const checkGames = document.getElementById("games-select");
 const platformList = document.getElementById("platform-list");
+const gameList = document.getElementById('game-list');
+
 
 
 const games = [
@@ -33,8 +35,7 @@ const games = [
   }
 ];
 
-const gameList = document.getElementById('game-list');
-
+// ADICIONA OS JOGOS NA HOME
 games.map(game => {
   const gameItem = document.createElement('div');
   gameItem.classList.add('container__game')
@@ -67,7 +68,8 @@ games.map(game => {
   gameList.appendChild(gameItem)
 })
 
-categories.forEach(category => {
+// ADICIONA OS INPUTS DE CATEGORIA NO MODAL-GAME
+categories.map(category => {
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.id = category;
@@ -80,7 +82,8 @@ categories.forEach(category => {
   checkCategories.appendChild(label);
 });
 
-plataforms.forEach(platform => {
+// ADICIONA OS INPUTS DE PLATAFORMAS NO MODAL-GAME
+plataforms.map(platform => {
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.id = platform;
@@ -93,7 +96,7 @@ plataforms.forEach(platform => {
   checkPlatforms.appendChild(label);
 });
 
-
+// ADICIONA OS INPUTS NO MODAL-PLATFORM
 plataforms.map(platform => {
   const listItem = document.createElement('li');
   listItem.classList.add('platform-item');
@@ -109,6 +112,7 @@ plataforms.map(platform => {
   platformList.appendChild(listItem);
 })
 
+// MOSTRAR DROPDOWN CATEGORIA
 var expandedCategory = true;
 function showCategories() {
   if (!expandedCategory) {
@@ -120,6 +124,7 @@ function showCategories() {
   }
 }
 
+// MOSTRAR DROPDOWN PLATAFORMA
 var expandedPlatform = true;
 function showPlatforms() {
   if (!expandedPlatform) {
