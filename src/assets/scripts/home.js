@@ -6,8 +6,6 @@ const checkGames = document.getElementById("games-select");
 const platformList = document.getElementById("platform-list");
 const gameList = document.getElementById('game-list');
 
-
-
 const games = [
   {
     id: 1,
@@ -52,7 +50,9 @@ games.map(game => {
       </div>
       <div class="game__details">
         <h3 class="game__title">${game.title}</h3>
-        <button class="btn btn__secondary">Editar</button>
+        <button type="button" class="btn btn__secondary" data-toggle="modal" data-target="#editGame-modal">
+          Editar
+        </button>
       </div>
       <div class="game__tags">
         <div class="game__tags-category">
