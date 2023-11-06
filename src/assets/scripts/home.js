@@ -106,11 +106,16 @@ plataforms.map(platform => {
       <input type="text" id=${platform} name=${platform} value=${platform} class="platform-input"></input>
       <img src="assets/img/pen-icon.svg" class="platform-icon"/>
     </div>
-    <img src="assets/img/icon-trash.svg" class="platform-image"/>
-  `
+    <img src="assets/img/icon-trash.svg" class="platform-image" onclick="removePlatform(this)"/>
+  `;
 
   platformList.appendChild(listItem);
-})
+});
+
+function removePlatform(element) {
+  const platformItem = element.parentElement;
+  platformList.removeChild(platformItem);
+}
 
 // MOSTRAR DROPDOWN CATEGORIA
 var expandedCategory = true;
