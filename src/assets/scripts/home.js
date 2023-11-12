@@ -1,9 +1,15 @@
 const categories = ['jogado', 'jogando', 'zerado', 'nao-recomendo'];
 let platformsArray = ['Steam', 'Epic', 'PSN', 'Xbox', 'PlayStore'];
 const checkCategories = document.getElementById("categories-select");
+const checkPlatforms = document.getElementById("platforms-select");
 const checkGames = document.getElementById("games-select");
 const gameList = document.getElementById('game-list');
 const platformInput = document.getElementById('platform-name')
+const inputGameName = document.getElementById('game-name')
+const selectedFileName = document.getElementById('selectedFileName');
+const gamePhoto = document.getElementById('game-photo')
+let imageUrl = ''
+
 
 let games = [
   {
@@ -11,7 +17,7 @@ let games = [
     title: 'Stardew Valley',
     categorys: ['jogado', 'jogando', 'zerado'],
     plataform: ['Steam', 'Epic', 'PSN', 'Xbox'],
-    img: './assets/img/image-game-1.png',
+    img: './assets/img/stardew-valley.png',
     rating: 3
   },
   {
@@ -19,7 +25,7 @@ let games = [
     title: 'Red Dead Redemption 2',
     categorys: ['jogado', 'jogando', 'zerado'],
     plataform: ['Steam', 'Epic', 'PSN', 'Xbox'],
-    img: './assets/img/image-game-2.png',
+    img: './assets/img/red-dead.jpeg',
     rating: 3
   },
   {
@@ -27,13 +33,14 @@ let games = [
     title: 'Detroit: Become Human',
     categorys: ['jogado', 'jogando', 'zerado'],
     plataform: ['Steam', 'Epic', 'PSN', 'Xbox'],
-    img: './assets/img/image-game-3.png',
+    img: './assets/img/detroit.jpg',
     rating: 3
   }
 ];
 
 // ADICIONA OS JOGOS NA HOME
 const loadGames = (games) => {
+  gameList.innerHTML = '';
   games.map(game => {
     const gameItem = document.createElement('div');
     gameItem.classList.add('container__game')
@@ -69,6 +76,57 @@ const loadGames = (games) => {
   })
 }
 loadGames(games)
+
+// RESET FORM GAME
+const resetForm = () => {
+  inputGameName.value = '';
+  gamePhoto.value = ''
+  selectedFileName.textContent = 'Enviar imagem';
+
+  checkCategories.querySelectorAll('input:checked').forEach(checkbox => checkbox.checked = false);
+  checkPlatforms.querySelectorAll('input:checked').forEach(checkbox => checkbox.checked = false);
+
+  const ratingInputs = document.querySelectorAll('input[name="rating"]');
+  ratingInputs.forEach(ratingInput => ratingInput.checked = false);
+}
+
+// GERENCIA INPUT FILE
+gamePhoto.addEventListener('change', function (e) {
+  const file = e.target.files[0];
+
+  if (file) {
+    selectedFileName.textContent = file.name;
+  } else {
+    selectedFileName.textContent = 'Enviar imagem';
+  }
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function (readerEvent) {
+      imageUrl = readerEvent.target.result;
+    };
+
+    reader.readAsDataURL(file);
+  }
+});
+
+// CRIA NOVO JOGO
+const createGame = () => {
+  const selectedCategories = Array.from(checkCategories.querySelectorAll('input:checked')).map(checkbox => checkbox.id);
+  const selectedPlatforms = Array.from(checkPlatforms.querySelectorAll('input:checked')).map(checkbox => checkbox.id);
+
+  games.push({
+    id: games.length + 1,
+    title: inputGameName.value,
+    categorys: selectedCategories,
+    plataform: selectedPlatforms,
+    img: imageUrl,
+    rating: 3
+  });
+  loadGames(games);
+  resetForm()
+};
 
 // ADICIONA OS INPUTS DE CATEGORIA NO MODAL-GAME
 categories.map(category => {
