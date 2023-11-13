@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="assets/styles/base/reset.css">
+  <link rel="stylesheet" href="assets/styles/base/style.css">
+  <link rel="stylesheet" href="assets/styles/components/button.css">
   <link rel="stylesheet" href="./assets/styles/components/login.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +18,50 @@
 </head>
 
 <body>
-  <a href="home.html">go to home</a>
+
+  <div class="login">
+    <header class="header__container">
+      <div class="header__content">
+        <img src="assets/img/ECHO-black.svg" alt="Echo" class="header__logo">
+      </div>
+    </header>
+
+    <section class="login__container">
+      <div class="login__image">
+        <img src="assets/img/image-login.png" alt="garoto jogando">
+      </div>
+      <div class="">
+        <form class="login__form">
+          <span class="form__title">Login</span>
+          <p class="form__description">Faça o login e acesse todo o seu catalogo de jogos</p>
+          <div class="form__field">
+            <label for="usuario">Email</label>
+            <input type="email" name="usuario" id="usuario" placeholder="exemple@email.com">
+          </div>
+          <div class="form__field">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="******">
+          </div>
+        </form>
+        <div class="form__buttons">
+          <button class="btn btn__primary">Criar uma conta</button>
+          <a href="home.html">
+            <button class="btn btn__secondary">Entrar</button>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <img src="assets/img/ECHO-white.svg" alt="" class="footer__logo">
+        <span class="footer__copy">
+          &copy; Copyright 2023 ECHO
+        </span>
+      </div>
+    </footer>
+  </div>
   <script src="./login.js"></script>
 </body>
 
