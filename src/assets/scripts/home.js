@@ -113,19 +113,23 @@ gamePhoto.addEventListener('change', function (e) {
 
 // CRIA NOVO JOGO
 const createGame = () => {
-  const selectedCategories = Array.from(checkCategories.querySelectorAll('input:checked')).map(checkbox => checkbox.id);
-  const selectedPlatforms = Array.from(checkPlatforms.querySelectorAll('input:checked')).map(checkbox => checkbox.id);
+  if (inputGameName.value === '' || imageUrl === '') {
+    alert('Preencha todos os campos');
+  } else {
+    const selectedCategories = Array.from(checkCategories.querySelectorAll('input:checked')).map(checkbox => checkbox.id);
+    const selectedPlatforms = Array.from(checkPlatforms.querySelectorAll('input:checked')).map(checkbox => checkbox.id);
 
-  games.push({
-    id: games.length + 1,
-    title: inputGameName.value,
-    categorys: selectedCategories,
-    plataform: selectedPlatforms,
-    img: imageUrl,
-    rating: 3
-  });
-  loadGames(games);
-  resetForm()
+    games.unshift({
+      id: games.length + 1,
+      title: inputGameName.value,
+      categorys: selectedCategories,
+      plataform: selectedPlatforms,
+      img: imageUrl,
+      rating: 3
+    });
+    loadGames(games);
+    resetForm();
+  }
 };
 
 // ADICIONA OS INPUTS DE CATEGORIA NO MODAL-GAME
@@ -148,13 +152,14 @@ const loadPlatform = (platformsArray) => {
   const checkPlatforms = document.getElementById("platforms-select");
 
   platformList.innerHTML = '';
+  platformInput.value = ''
   platformsArray.map(platform => {
     const listItem = document.createElement('li');
     listItem.classList.add('platform-item');
 
     listItem.innerHTML = `
       <div class="platform-input__container">
-        <input type="text" id=${platform} name=${platform} value=${platform} class="platform-input"></input>
+        <input type="text" id="${platform}" name="${platform}" value="${platform}" class="platform-input"></input>
         <img src="assets/img/pen-icon.svg" class="platform-icon"/>
       </div>
       <img src="assets/img/icon-trash.svg" class="platform-image" onclick="removePlatform('${platform}')"/>
@@ -181,7 +186,7 @@ loadPlatform(platformsArray)
 
 // CRIA A PLATAFORMA
 const createPlatform = () => {
-  platformsArray.push(platformInput.value.trim());
+  platformsArray.push(platformInput.value);
   loadPlatform(platformsArray);
 }
 
