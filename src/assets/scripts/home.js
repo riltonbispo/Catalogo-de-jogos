@@ -194,7 +194,11 @@ const createPlatform = () => {
 function removePlatform(platformDel) {
   const newArray = platformsArray.filter(platform => platform !== platformDel);
   platformsArray = newArray;
+  games.map(game => {
+    game.plataform = game.plataform.filter(plataform => plataform !== platformDel)
+  })
   loadPlatform(platformsArray);
+  loadGames(games);
 }
 
 // MOSTRAR DROPDOWN CATEGORIA
