@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/controller.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/styles/base/reset.css">
+  <link rel="stylesheet" href="./assets/styles/base/style.css">
+  <link rel="stylesheet" href="./assets/styles/components/button.css">
+  <link rel="stylesheet" href="./assets/styles/components/tag.css">
+  <link rel="stylesheet" href="./assets/styles/components/header.css">
+  <link rel="stylesheet" href="./assets/styles/components/home.css">
+  <link rel="stylesheet" href="./assets/styles/components/modal.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <title>Echo</title>
+</head>
+
+<body>
+
+  <header class="header__container">
+    <nav class="header__content navbar navbar-expand-lg navbar-light bg-light">
+      <img src="assets/img/ECHO-black.svg" alt="Echo" class="header__logo">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="header__buttons">
+          <button type="button" class="btn btn__primary" data-toggle="modal" data-target="#game-modal">
+            Adicionar Jogo
+          </button>
+          <button type="button" class="btn btn__secondary" data-toggle="modal" data-target="#platform-modal">
+            Gerenciar Plataformas
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-labelledby="game-modalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="game-modalTitle">Adicione um novo jogo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="game-name" class="input-gameName">
+            <span class="modal__subtitle">Nome do Jogo</span>
+            <input type="text" name="" id="game-name" placeholder="digite aqui">
+          </label>
+
+          <label for="game-photo" class="input-gameImage">
+            <span class="modal__subtitle" id="selectedFileName">Enviar imagem</span>
+            <img src="./assets/img/upload.svg" alt="">
+            <input type="file" id="game-photo" accept="image/*">
+          </label>
+
+          <div id="rating-container">
+            <p class="star-title">Avaliação</p>
+            <div class="stars">
+              <input class="star star-5" id="star-5" type="radio" name="rating" value="5" />
+              <label class="star star-5" for="star-5"></label>
+
+              <input class="star star-4" id="star-4" type="radio" name="rating" value="4" />
+              <label class="star star-4" for="star-4"></label>
+
+              <input class="star star-3" id="star-3" type="radio" name="rating" value="3" />
+              <label class="star star-3" for="star-3"></label>
+
+              <input class="star star-2" id="star-2" type="radio" name="rating" value="2" />
+              <label class="star star-2" for="star-2"></label>
+
+              <input class="star star-1" id="star-1" type="radio" name="rating" value="1" />
+              <label class="star star-1" for="star-1"></label>
+            </div>
+          </div>
+
+          <div class="selects">
+            <div class="multiselect">
+              <span class="modal__subtitle">Categoria</span>
+              <div class="selectBox" onclick="showCategories()">
+                <select>
+                  <option>select</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="categories-select">
+              </div>
+            </div>
+
+            <div class="multiselect">
+              <span class="modal__subtitle">Plataformas</span>
+              <div class="selectBox" onclick="showPlatforms()">
+                <select>
+                  <option>select</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="platforms-select">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn__delete" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn__primary" onclick="createGame()">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="platform-modal" tabindex="-1" role="dialog" aria-labelledby="platform-modalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="platform-modalTitle">Adicione uma Plataforma</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="platform-name" class="input-gameName">
+            <span class="modal__subtitle">Nome da Plataforma</span>
+            <input type="text" name="" id="platform-name" placeholder="digite aqui">
+          </label>
+
+          <span class="modal__subtitle">Editar Plataformas</span>
+          <ul id="platform-list"></ul>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn__delete" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn__primary" onclick="createPlatform()">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editGame-modal" tabindex="-1" role="dialog" aria-labelledby="editGame-modalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editGame-modalTitle">Editar Jogo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="game-name" class="input-gameName">
+            <span class="modal__subtitle">Nome do Jogo</span>
+            <input type="text" name="" id="game-name" placeholder="digite aqui">
+          </label>
+
+          <label for="game-photo" class="input-gameImage">
+            <span class="modal__subtitle">Enviar imagem</span>
+            <img src="./assets/img/upload.svg" alt="">
+            <input type="file" name="" id="game-photo">
+          </label>
+
+          <p class="star-title">Avaliação</p>
+          <div class="stars">
+            <input class="star star-5" id="star-5" type="radio" name="star" value="5" />
+            <label class="star star-5" for="star-5"></label>
+
+            <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
+            <label class="star star-4" for="star-4"></label>
+
+            <input class="star star-3" id="star-3" type="radio" name="star" value="3" />
+            <label class="star star-3" for="star-3"></label>
+
+            <input class="star star-2" id="star-2" type="radio" name="star" value="2" />
+            <label class="star star-2" for="star-2"></label>
+
+            <input class="star star-1" id="star-1" type="radio" name="star" value="1" />
+            <label class="star star-1" for="star-1"></label>
+          </div>
+
+          <div class="selects">
+            <div class="multiselect">
+              <span class="modal__subtitle">Categoria</span>
+              <div class="selectBox" onclick="showCategories()">
+                <select>
+                  <option>select</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="categories-select">
+              </div>
+            </div>
+
+            <div class="multiselect">
+              <span class="modal__subtitle">Plataformas</span>
+              <div class="selectBox" onclick="showPlatforms()">
+                <select>
+                  <option>select</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="platforms-select">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn__delete" data-dismiss="modal">Excluir</button>
+          <button type="button" class="btn btn__primary">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main__container">
+    <section class="main__content">
+      <div>
+        <p class="main-description">Seja bem-vindo ao seu universo de jogos! Relembre suas aventuras e registre-as para
+          nunca mais
+          esquecê-las.</p>
+      </div>
+
+      <div class="game__list" id="game-list">
+      </div>
+    </section>
+  </main>
+
+  <script src="./assets/scripts/home.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  appearance: none;
+}
+
+.btn {
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+  padding: 0.5em 1em;
+  border-radius: 0.375em;
+}
+
+.btn__primary {
+  color: white;
+  background: #2d3648;
+
+  &:hover {
+    background-color: white;
+    color: #2d3648;
+    filter: brightness(90%);
+  }
+}
+
+.btn__secondary {
+  color: #2d3648;
+  border: 2px solid #2d3648;
+
+  &:hover {
+    background-color: white;
+    color: #2d3648;
+    filter: brightness(90%);
+  }
+}
+
+.btn__delete {
+  color: #ff5252;
+}
+
+.tag {
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 150%;
+
+  padding: 0.25em 0.5em;
+  border-radius: 0.2rem;
+}
+
+.tag__game {
+  background: #35373a;
+}
+
+.tag__plataform {
+  background: #2d3648;
+}
